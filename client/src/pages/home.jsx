@@ -14,7 +14,7 @@ const Home = () => {
           <div className="title">{ blog.id}</div>
           <h2>{blog.title}</h2>
           <small>{blog.author}</small>
-          <p>{blog.content.substring(0, 200)} .....</p>
+          <p>{blog.content.substring(0, 240)} .....</p>
           <Link to={`/details/${blog.id}`}>Read more</Link>
         </div>
       ))} 
