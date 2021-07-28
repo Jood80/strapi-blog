@@ -1,20 +1,33 @@
+import { useQuery , gql} from '@apollo/client';
 import { Link, useParams } from 'react-router-dom';
-import useFetch from '../hooks/useFetch';
+
+const BLOGS = gql`
+ query getBlog($id: ID!) {
+    blog(id:$id) {
+      id,
+      title,
+      author,
+      content    
+    }
+}
+`;
 
 const BlogDetails = () => {
   const { id } = useParams();
-  const {isLoading, error, blogs }= useFetch(`http://localhost:1337/blogs/${id}`)
-  
+  const { isLoading, error, data } = useQuery(BLOGS, {
+    variables: { id }
+  })
+
   return ( 
     <div>
       {isLoading && <p>Loading ...</p>}
       {error && <p>Error ...</p>}
-      {blogs && (
+      {data && (
         <div className='blog-card'>
-          <div className="title">{blogs.id}</div>
-          <h2>{blogs.title}</h2>
-          <small>{blogs.author}</small>
-          <p>{blogs.content}</p>
+          <div className="title">{data.blog.id}</div>
+          <h2>{data.blog.title}</h2>
+          <small>{data.blog.author}</small>
+          <p>{data.blog.content}</p>
           <Link to={'/'}>Back</Link>
         </div>)}      
     </div>
