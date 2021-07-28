@@ -1,15 +1,24 @@
 import { Link } from 'react-router-dom';
-import useFetch from '../hooks/useFetch';
+import { useQuery,gql } from '@apollo/client';
 
+const BLOGS = gql`
+  query getBlogs {
+    blogs {
+      id,
+      title,
+      author,
+      content    
+    }
+  }
+`;
 
 const Home = () => {
-  const { isLoading, error, blogs } = useFetch('http://localhost:1337/blogs');
-  
+  const { isLoading, error, data } = useQuery(BLOGS);
   return (
     <div>
       {isLoading && <p>Loading ...</p>}
       {error && <p>Error ...</p>}
-      {blogs && blogs.map((blog) => (
+      {data && data.blogs.map((blog) => (
         <div key={blog.id} className='blog-card'>
           <div className="title">{ blog.id}</div>
           <h2>{blog.title}</h2>
