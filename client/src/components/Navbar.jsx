@@ -1,11 +1,10 @@
-import { Fragment } from 'react';
 import { Link } from 'react-router-dom';
 
 const Navbar = () => {
   return (
-    <Fragment className="Navbar">
-      <Link to= '/'> <h2>Blogs</h2> </Link>
-    </Fragment>
+    <div className="site-header">
+      <Link to='/'><h1>Blogs</h1></Link>
+    </div>
   );
 };
  
