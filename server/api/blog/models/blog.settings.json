@@ -24,6 +24,11 @@
     "content": {
       "type": "richtext",
       "required": true
+    },
+    "categories": {
+      "via": "blogs",
+      "collection": "category",
+      "dominant": true
     }
   }
 }
