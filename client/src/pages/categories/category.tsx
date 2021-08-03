@@ -8,11 +8,9 @@ const Category = () => {
     variables: { id },
   })
  
-  
   if (loading) return <p>Loading ...</p>
   if (error) return <p>Error ...</p>
   
-  console.log(data);
   return ( 
     <div>
       <h2>{data && data.category.name}</h2>
