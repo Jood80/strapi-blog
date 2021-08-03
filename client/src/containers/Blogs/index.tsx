@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
 import ReactMarkdown from 'react-markdown'
-import { GET_ALL_BLOGS } from './queries'
+import { GET_ALL_BLOGS } from '../../queries/blog/blogs'
 
 
 const Home = () => {

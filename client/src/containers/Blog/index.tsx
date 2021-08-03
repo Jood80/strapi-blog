@@ -1,7 +1,8 @@
 import { useQuery } from '@apollo/client';
 import { Link, useParams } from 'react-router-dom';
 import ReactMarkdown from 'react-markdown'
-import { GET_BLOG_DETAILS } from './queries';
+
+import { GET_BLOG_DETAILS } from '../../queries/blog/blog';
 
 
 const BlogDetails = () => {

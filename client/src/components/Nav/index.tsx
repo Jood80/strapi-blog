@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
-import { GET_ALL_CATEGORIES } from './queries';
+import { GET_ALL_CATEGORIES } from '../../queries/category/categories';
 
 
 const Navbar = () => {

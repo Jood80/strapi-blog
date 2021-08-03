@@ -1,6 +1,6 @@
 import { useQuery} from '@apollo/client'
 import { useParams, Link } from 'react-router-dom';
-import { GET_BLOGS_PER_CATEGORY } from './queries';
+import { GET_BLOGS_PER_CATEGORY } from '../../queries/category/blogs';
 
 const Category = () => {
   const { id }: { id: string } = useParams()
