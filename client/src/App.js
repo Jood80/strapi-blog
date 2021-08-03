@@ -1,7 +1,7 @@
 import { ApolloClient, InMemoryCache, ApolloProvider} from '@apollo/client';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
-import Navbar from './components/Navbar/Navbar';
+import { Navbar } from './components';
 import  { Home, Category, BlogDetails} from './pages'
 
 const client = new ApolloClient({

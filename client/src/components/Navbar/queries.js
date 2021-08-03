@@ -1,6 +1,6 @@
 import { gql } from '@apollo/client';
 
-export const CATEGORIES = gql`
+export const GET_ALL_CATEGORIES = gql`
   query GetCategories {
     categories {
       id,

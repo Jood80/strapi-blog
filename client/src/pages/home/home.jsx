@@ -1,11 +1,12 @@
 import { Link } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
 import ReactMarkdown from 'react-markdown'
-import {BLOGS} from './queries'
+import { GET_ALL_BLOGS } from './queries'
 
 
 const Home = () => {
-  const { isLoading, error, data } = useQuery(BLOGS);
+  const { isLoading, error, data } = useQuery(GET_ALL_BLOGS);
+
   return (
     <div>
       {isLoading && <p>Loading ...</p>}

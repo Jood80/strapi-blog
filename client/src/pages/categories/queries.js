@@ -1,6 +1,6 @@
 import { gql} from '@apollo/client';
 
-export const CATEGORY = gql`
+export const GET_BLOGS_PER_CATEGORY = gql`
     query GetCategory($id: ID!) {
       category(id: $id) {
         id,

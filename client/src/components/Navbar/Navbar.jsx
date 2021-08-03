@@ -1,10 +1,10 @@
 import { Link } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
-import { CATEGORIES } from './queries';
+import { GET_ALL_CATEGORIES } from './queries';
 
 
 const Navbar = () => {
-  const { isLoading, error, data } = useQuery(CATEGORIES)
+  const { isLoading, error, data } = useQuery(GET_ALL_CATEGORIES)
   
   if (isLoading) return <p>Loading ...</p>
   if (error) return <p>Error ...</p>

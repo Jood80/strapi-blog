@@ -1,14 +1,12 @@
 import { useQuery } from '@apollo/client';
 import { Link, useParams } from 'react-router-dom';
 import ReactMarkdown from 'react-markdown'
-import { BLOGS } from './queries';
+import { GET_BLOG_DETAILS } from './queries';
 
 
 const BlogDetails = () => {
-  const params = useParams();
-  console.log(params);
-  const {id} = params
-  const { isLoading, error, data } = useQuery(BLOGS, {
+  const { id } = useParams();
+  const { isLoading, error, data } = useQuery(GET_BLOG_DETAILS, {
     variables: { id }
   })
 

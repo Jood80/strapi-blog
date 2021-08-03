@@ -1,12 +1,10 @@
 import { useQuery} from '@apollo/client'
-import { useParams, Link, useHistory } from 'react-router-dom';
-import { CATEGORY } from './queries';
+import { useParams, Link } from 'react-router-dom';
+import { GET_BLOGS_PER_CATEGORY } from './queries';
 
 const Category = () => {
   const { id } = useParams()
-  let history = useHistory()
-  console.log({history});
-  const { isLoading, error, data } = useQuery(CATEGORY, {
+  const { isLoading, error, data } = useQuery(GET_BLOGS_PER_CATEGORY, {
     variables: { id },
   })
  
