@@ -5,11 +5,11 @@ import { GET_ALL_BLOGS } from './queries'
 
 
 const Home = () => {
-  const { isLoading, error, data } = useQuery(GET_ALL_BLOGS);
+  const { loading, error, data } = useQuery(GET_ALL_BLOGS);
 
   return (
     <div>
-      {isLoading && <p>Loading ...</p>}
+      {loading && <p>Loading ...</p>}
       {error && <p>Error ...</p>}
       {data && data.blogs.map((blog) => (
         <div key={blog.id} className='blog-card'>

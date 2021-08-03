@@ -3,13 +3,13 @@ import { useParams, Link } from 'react-router-dom';
 import { GET_BLOGS_PER_CATEGORY } from './queries';
 
 const Category = () => {
-  const { id } = useParams()
-  const { isLoading, error, data } = useQuery(GET_BLOGS_PER_CATEGORY, {
+  const { id }: { id: string } = useParams()
+  const { loading, error, data } = useQuery(GET_BLOGS_PER_CATEGORY, {
     variables: { id },
   })
  
   
-  if (isLoading) return <p>Loading ...</p>
+  if (loading) return <p>Loading ...</p>
   if (error) return <p>Error ...</p>
   
   console.log(data);

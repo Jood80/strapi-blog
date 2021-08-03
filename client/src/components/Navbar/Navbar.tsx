@@ -4,9 +4,9 @@ import { GET_ALL_CATEGORIES } from './queries';
 
 
 const Navbar = () => {
-  const { isLoading, error, data } = useQuery(GET_ALL_CATEGORIES)
+  const { loading, error, data } = useQuery(GET_ALL_CATEGORIES)
   
-  if (isLoading) return <p>Loading ...</p>
+  if (loading) return <p>Loading ...</p>
   if (error) return <p>Error ...</p>
   
   console.log({data});

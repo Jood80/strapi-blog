@@ -5,14 +5,14 @@ import { GET_BLOG_DETAILS } from './queries';
 
 
 const BlogDetails = () => {
-  const { id } = useParams();
-  const { isLoading, error, data } = useQuery(GET_BLOG_DETAILS, {
+  const { id }: { id: string } = useParams();
+  const { loading, error, data } = useQuery(GET_BLOG_DETAILS, {
     variables: { id }
   })
 
   return ( 
     <div>
-      {isLoading && <p>Loading ...</p>}
+      {loading && <p>Loading ...</p>}
       {error && <p>Error ...</p>}
       {data && (
         <div className='blog-card'>
