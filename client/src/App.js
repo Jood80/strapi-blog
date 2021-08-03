@@ -16,15 +16,9 @@ function App() {
         <div className="App">
           <Navbar />
           <Switch>
-            <Route exact path='/' >
-              <Home/>
-            </Route>
-            <Route path='/details/:id' >
-              <BlogDetails/>
-            </Route>
-            <Route path='/category/:id' >
-              <Category/>
-            </Route>
+            <Route exact path='/' component={Home}/>
+            <Route path='/details/:id' component={BlogDetails} />
+            <Route exact path='/category/:id' component={Category} />
           </Switch>
         </div>
       </ApolloProvider>
