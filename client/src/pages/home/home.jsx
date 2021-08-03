@@ -1,16 +1,8 @@
 import { Link } from 'react-router-dom';
-import { useQuery,gql } from '@apollo/client';
+import { useQuery } from '@apollo/client';
+import ReactMarkdown from 'react-markdown'
+import {BLOGS} from './queries'
 
-const BLOGS = gql`
-  query getBlogs {
-    blogs {
-      id,
-      title,
-      author,
-      content    
-    }
-  }
-`;
 
 const Home = () => {
   const { isLoading, error, data } = useQuery(BLOGS);
@@ -23,7 +15,7 @@ const Home = () => {
           <div className="title">{ blog.id}</div>
           <h2>{blog.title}</h2>
           <small>{blog.author}</small>
-          <p>{blog.content.substring(0, 240)} .....</p>
+          <ReactMarkdown>{blog.content.substring(0, 240)}</ReactMarkdown>
           <Link to={`/details/${blog.id}`}>Read more</Link>
         </div>
       ))} 

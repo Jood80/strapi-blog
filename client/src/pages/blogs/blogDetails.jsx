@@ -1,19 +1,13 @@
-import { useQuery , gql} from '@apollo/client';
+import { useQuery } from '@apollo/client';
 import { Link, useParams } from 'react-router-dom';
+import ReactMarkdown from 'react-markdown'
+import { BLOGS } from './queries';
 
-const BLOGS = gql`
- query getBlog($id: ID!) {
-    blog(id:$id) {
-      id,
-      title,
-      author,
-      content    
-    }
-}
-`;
 
 const BlogDetails = () => {
-  const { id } = useParams();
+  const params = useParams();
+  console.log(params);
+  const {id} = params
   const { isLoading, error, data } = useQuery(BLOGS, {
     variables: { id }
   })
@@ -27,7 +21,7 @@ const BlogDetails = () => {
           <div className="title">{data.blog.id}</div>
           <h2>{data.blog.title}</h2>
           <small>{data.blog.author}</small>
-          <p>{data.blog.content}</p>
+          <ReactMarkdown>{data.blog.content}</ReactMarkdown>
           <Link to={'/'}>Back</Link>
         </div>)}      
     </div>
