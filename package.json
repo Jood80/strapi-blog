@@ -1,0 +1,26 @@
+{
+  "name": "strapi-blog",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "client": "cd client && yarn start",
+    "server": "cd server && npm run develop",
+    "setup": "cd client && yarn",
+    "build": "cd client && yarn run build",
+    "dev": "concurrently \"npm run server\" \"npm run client\"" 
+
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jood80/strapi-blog.git"
+  },
+  "author": "Nujood",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Jood80/strapi-blog/issues"
+  },
+  "homepage": "https://github.com/Jood80/strapi-blog#readme",
+  "dependencies": {
+    "concurrently": "^6.2.0"
+  }
+}
