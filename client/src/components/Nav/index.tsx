@@ -16,7 +16,7 @@ const Navbar = () => {
         <span>Filter blogs by category: </span>
         {data && data.categories.map((category) => {
           return(
-            <Link key={category.id} to={`category/${category.id}`}>
+            <Link key={category.id} to={`/category/${category.id}`}>
               {category.name}
             </Link>
           )} )}
